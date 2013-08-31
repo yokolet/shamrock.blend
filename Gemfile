@@ -10,6 +10,7 @@ gem 'haml-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activerecord-jdbcsqlite3-adapter'
+gem 'diametric', :git => 'git://github.com/relevance/diametric.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
