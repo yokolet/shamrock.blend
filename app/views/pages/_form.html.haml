@@ -1,0 +1,15 @@
+= form_tag('/pages', :method => :post) do |f|
+  %p
+    = label_tag 'title'
+    = text_field_tag(:title, @page ? @page.title : "", size: 45)
+
+  %p
+    = label_tag 'content'
+    = text_area_tag(:content, @page ? @page.content : "", size: "45x20")
+
+  %p
+    = label_tag 'page#'
+    = text_field_tag(:no, @page ? @page.no : "")
+
+  %p
+    = submit_tag('Create', class: :action)
