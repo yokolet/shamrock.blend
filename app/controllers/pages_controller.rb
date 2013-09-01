@@ -1,6 +1,14 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_admin!
+
   def index
-    @pages = Page.all.inject([]) {|memo, page| memo << Page.from_dbid_or_entity(page)}
+    resolved = Page.all.inject([]) {|memo, dbid| memo << Page.get(dbid)}
+    @pages = resolved.sort {|x, y| x.no <=> y.no }
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pages }
+    end
   end
 
   def create
@@ -17,22 +25,39 @@ class PagesController < ApplicationController
   end
 
   def new
+    @page = Page.new
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @page }
+    end
   end
 
   def edit
-    @page = Page.from_dbid_or_entity(params[:id].to_i)
+    @page = Page.find(params[:id].to_i)
   end
 
   def show
-    @page = Page.from_dbid_or_entity(params[:id].to_i)
+    @page = Page.find(params[:id].to_i)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @page }
     end
   end
 
   def update
+    @page = Page.find(params[:id].to_i)
+
+    respond_to do |format|
+      if @page.update_attributes(title: params[:title], content: params[:content], no: params[:no].to_f)
+        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @page.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
