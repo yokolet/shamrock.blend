@@ -15,6 +15,7 @@ class PagesController < ApplicationController
     @page = Page.new(title: params[:title], content: params[:content], no: params[:no].to_f)
     respond_to do |format|
       if @page.save
+        update_order
         format.html { redirect_to @page, notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
@@ -51,6 +52,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(title: params[:title], content: params[:content], no: params[:no].to_f)
+        update_order
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
@@ -67,6 +69,15 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pages_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+  def update_order
+    resolved = Page.all.inject([]) {|memo, dbid| memo << Page.get(dbid)}
+    sorted = resolved.sort {|x, y| x.no <=> y.no }
+    sorted.each_with_index do |page, index|
+      page.update(order: index)
     end
   end
 end

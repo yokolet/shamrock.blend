@@ -1,0 +1,194 @@
+/* ------ general
+-----------------------------------------------*/
+
+body {
+font-family:Arial, Trebuchet MS, Helvetica, Sans-Serif;
+background:#f1f1f1;
+font-size:11px;
+}
+
+/* ------ mobilyslider
+-----------------------------------------------*/
+
+#content {
+width:1200px;
+margin:30px auto 0;
+}
+
+.slider {
+float:left;
+width:1200px;
+
+position:relative;
+padding-bottom:26px;
+}
+
+.sliderContent {
+float:left;
+width:1200px;
+height:680px;
+clear:both;
+position:relative;
+overflow:hidden;
+background-color: #888888;
+}
+
+.sliderArrows a {
+display:block;
+text-indent:-9999px;
+outline:none;
+z-index:50;
+background-image:url(/assets/prev_next.png);
+width:42px;
+height:42px;
+position:absolute;
+top:50%;
+margin-top:-34px;
+}
+
+.prev {
+background-position:0 0;
+left:-22px;
+}
+
+.prev:hover {
+background-position:0 -44px;
+}
+
+.next {
+right:-22px;
+background-position:-44px 0;
+}
+
+.next:hover {
+background-position:-44px -44px;
+}
+
+.sliderContent .item {
+position:absolute;
+width:1200px;
+height:680px;
+/*background:#f0f0f0;*/
+background:url(/assets/background2.png);
+}
+
+.sliderContent .title {
+height:60px;
+padding-top:20px;
+padding-bottom:0px;
+text-align:center;
+font-family:"Tahoma", Geneva, sans-serif;
+font-size: 60px;
+color:#22140b;
+position:relative;
+/*background:#e0e0e0;*/
+background:#f3f0e7;
+}
+
+.sliderBullets {
+position:absolute;
+bottom:0;
+left:10%;
+z-index:50;
+margin-left:-45px;
+}
+
+.sliderBullets a {
+display:block;
+float:left;
+text-indent:-9999px;
+outline:none;
+margin-left:5px;
+width:10px;
+height:11px;
+background:url(/assets/bullets.png) no-repeat;
+}
+
+.sliderBullets .active {
+background-position:0 -11px;
+}
+
+.sliderContent a {
+outline:none;
+}
+
+a {
+color:#222222;
+}
+
+a img {
+border:none;
+}
+
+.sliderContent .item a:link {
+text-decoration:none;
+color:#3a4c0e;
+background-color:#f1f1f1;
+}
+
+.sliderContent .item a:visited {
+text-decoration:none;
+color:#3a4c0e;
+background-color:#f1f1f1;
+}
+
+.sliderContent .item a:hover {
+text-decoration:underline;
+color:#3a4c0e;
+background-color:#f1f1f1;
+}
+
+.sliderContent .item .code {
+background-color: #aaaaaa;
+color: #222222;
+font-family: Lucida Console, Courier New, Monospace;
+font-size: 30px;
+letter-spacing: -2px;
+}
+
+.sliderContent .item .list {
+    font-size: 400%;
+    line-height: 60px;
+    color: #222d06;
+    letter-spacing: -2px;
+}
+
+.partial {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+h1, h2, h3, h4, h5
+{
+        margin: 20px 0 15px 20px;
+        padding: 5px;
+        color: #fafa80;
+        font-weight: normal;
+}
+h1
+{
+        font-size: 500%;
+        color: #361d0e;
+        letter-spacing: -2px
+}
+
+h2
+{
+        font-size: 400%;
+        color: #361d0e;
+        letter-spacing: -2px
+}
+
+h3
+{
+        font-size: 300%;
+        color: #222d06;
+        letter-spacing: -2px
+}
+
+h4
+{
+        font-size: 200%;
+        color: #fa9261;
+        letter-spacing: -3px
+}

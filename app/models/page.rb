@@ -4,5 +4,6 @@ class Page
 
   attribute :title, String
   attribute :content, String
-  attribute :no, Float, :index => true
+  attribute :no, Float
+  attribute :order, Integer, :index => true
 end

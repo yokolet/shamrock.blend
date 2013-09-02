@@ -1,0 +1,13 @@
+#content
+  .slider
+    #pink.sliderContent
+      .item{:style => "z-index: #{ -(0 - @number_of_pages) }"}
+        .title= @page.title
+        = Haml::Engine.new(@page.content).render
+    .sliderBullets
+      %a.active{:href => "#", :rel => "0"}
+      - (1...@number_of_pages).each do |index|
+        %a{:href => "#", :rel => "#{index}"}= "#{index}"
+    .sliderArrows{:style => "display: block;"}
+      %a.prev{:href => "#"} Previous
+      %a.next{:href => "#"} Next

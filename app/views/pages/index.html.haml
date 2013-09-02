@@ -1,9 +1,11 @@
 = link_to "Sign Out", destroy_admin_session_path, method: :delete
+= link_to "Slideshow", slideshow_index_path
 
 %h1 Listing pages
 
 %table
   %tr
+    %th Order
     %th DBID
     %th Title
     %th Content
@@ -14,6 +16,7 @@
 
   - @pages.each do |page|
     %tr
+    %td= page.order
     %td= page.dbid
     %td= page.title
     %td= page.content
