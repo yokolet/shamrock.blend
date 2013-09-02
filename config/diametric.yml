@@ -1,5 +1,5 @@
 ---
 development:
-  uri: datomic:mem://shamrock.blend
+  uri: datomic:free://localhost:4334/shamrock.blend
 production:
   uri: datomic:free://localhost:4334/shamrock.blend

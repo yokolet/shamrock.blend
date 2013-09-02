@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/relevance/diametric.git
-  revision: b3c35a9b898f789bd00a33c8d4b19479f23cb28e
+  revision: e88405e8ff10e97ea70f2959da37df239ea93fe5
   specs:
     diametric (0.1.0-java)
       activemodel (~> 3.2.14)
