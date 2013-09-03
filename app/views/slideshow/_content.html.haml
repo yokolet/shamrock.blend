@@ -1,3 +1,4 @@
 #orange.item{:style => "z-index: #{ -(@no - @number_of_pages) }; display: block"}
-  .title= @page.title
-  = Haml::Engine.new(@page.content).render
+  .title= @title
+  .partial
+    = @content

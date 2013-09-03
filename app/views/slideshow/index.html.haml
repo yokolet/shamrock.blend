@@ -2,8 +2,8 @@
   .slider
     #pink.sliderContent
       .item{:style => "z-index: #{ -(0 - @number_of_pages) }"}
-        .title= @page.title
-        = Haml::Engine.new(@page.content).render
+        .title= @title
+        = @content
     .sliderBullets
       %a.active{:href => "#", :rel => "0"}
       - (1...@number_of_pages).each do |index|
