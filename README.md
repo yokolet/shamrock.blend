@@ -60,13 +60,13 @@ To run this app, follow the steps below:
     pid-dir=<rails root>/vendor/log/free-transactor.pid
     ```
 
-    *<rails root> is a full path to shamrock.d including "shamrock.d"
+    *<rails root> is a full path to shamrock.d including "shamrock.blend"
 
 9. Start Datomic free transactor
 
     `cd` to unzipped directory, then
     ```bash
-    $ bin/transactor <rails root>/vendor/config//free-transactor.properties
+    $ bin/transactor <rails root>/vendor/config/free-transactor.properties
     ```
 
 10. Start Rails
@@ -77,12 +77,12 @@ To run this app, follow the steps below:
 
 11. Go to http://localhost:3000/slideshow
 
-    Right/Left arrows, buttons under the slide navigates you.
+    Right/Left arrows and buttons under the slide navigate you.
 
 
 12. Go to http://localhost:3000/pages
 
-    Devise authentication cuts in. So, sign up any email/password.   
+    Devise authentication cuts in. If you have never logged in, sign up with any email/password.   
 
     This is a slide editing page. Not very nice interface, but works.
     Try create new/edit/delete, and reload the slideshow.
